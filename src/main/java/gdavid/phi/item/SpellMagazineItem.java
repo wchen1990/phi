@@ -3,6 +3,8 @@ package gdavid.phi.item;
 import gdavid.phi.Phi;
 import gdavid.phi.capability.MagazineSocketable;
 import java.util.List;
+
+import gdavid.phi.util.TooltipHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -66,17 +68,33 @@ public class SpellMagazineItem extends Item implements ICADComponent {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack item, World world, List<ITextComponent> tooltip, ITooltipFlag advanced) {
-		tooltip.add(new TranslationTextComponent("item." + Phi.modId + "." + id + ".desc"));
-		tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".spell_magazine.desc"));
-		tooltip.add(new StringTextComponent(" ")
-				.append(new TranslationTextComponent(EnumCADStat.BANDWIDTH.getName()).mergeStyle(TextFormatting.AQUA))
-				.appendString(": " + bandwidth));
-		tooltip.add(new StringTextComponent(" ")
-				.append(new TranslationTextComponent(EnumCADStat.SOCKETS.getName()).mergeStyle(TextFormatting.AQUA))
-				.appendString(": " + sockets));
-		tooltip.add(new StringTextComponent(" ").append(
-				new TranslationTextComponent(EnumCADStat.SAVED_VECTORS.getName()).mergeStyle(TextFormatting.AQUA))
-				.appendString(": " + vectors));
+		TranslationTextComponent desc1 = new TranslationTextComponent("item." + Phi.modId + "." + id + ".desc1");
+		TranslationTextComponent desc2 = new TranslationTextComponent("item." + Phi.modId + "." + id + ".desc2");
+
+		if (desc1.getString().length() > 0)
+			tooltip.add(desc1);
+		if (desc2.getString().length() > 0)
+			tooltip.add(desc2);
+
+		TooltipHelper.tooltipIfAlt(tooltip, () -> {
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".spell_magazine.desc1"));
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".spell_magazine.desc2"));
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".spell_magazine.desc3"));
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".spell_magazine.desc4"));
+		});
+
+		TooltipHelper.tooltipIfShift(tooltip, () -> {
+			tooltip.add(new TranslationTextComponent("psimisc.component_type", new TranslationTextComponent("psi.component.socket")));
+			tooltip.add(new StringTextComponent(" ")
+					.append(new TranslationTextComponent(EnumCADStat.BANDWIDTH.getName()).mergeStyle(TextFormatting.AQUA))
+					.appendString(": " + bandwidth).mergeStyle(TextFormatting.WHITE));
+			tooltip.add(new StringTextComponent(" ")
+					.append(new TranslationTextComponent(EnumCADStat.SOCKETS.getName()).mergeStyle(TextFormatting.AQUA))
+					.appendString(": " + sockets).mergeStyle(TextFormatting.WHITE));
+			tooltip.add(new StringTextComponent(" ").append(
+					new TranslationTextComponent(EnumCADStat.SAVED_VECTORS.getName()).mergeStyle(TextFormatting.AQUA))
+					.appendString(": " + vectors).mergeStyle(TextFormatting.WHITE));
+		});
 	}
 	
 	@Override

@@ -90,28 +90,52 @@
 	"phi.spellpiece.connector_in_out": "In-Out Connector",
 	"phi.spellpiece.connector_in_out.desc": "Splits a two-way connection",
 
-	"item.phi.spell_magazine.desc": "\u00a7aSpell Magazine\u00a77: A hot swappable alternative to CAD Sockets\nRight-click to swap the magazine with the one in your CAD\nCompatible only with CADs that were assembled with the same magazine type",
+	"item.phi.spell_magazine.desc1": "\u00a7aSpell Caches\u00a77:",
+	"item.phi.spell_magazine.desc2": "A hot swappable alternative to Rod Notches",
+	"item.phi.spell_magazine.desc3": "Only swaps with the same type",
+	"item.phi.spell_magazine.desc4": "Right-click to swap",
 
-	"item.phi.basic_spell_magazine": "Basic Spell Magazine",
-	"item.phi.basic_spell_magazine.desc": "A cheap Spell Magazine",
-	"item.phi.large_spell_magazine": "Large Spell Magazine",
-	"item.phi.large_spell_magazine.desc": "A Spell Magazine with increased capacity",
-	"item.phi.huge_spell_magazine": "Huge Spell Magazine",
-	"item.phi.huge_spell_magazine.desc": "A Spell Magazine with extra-large capacity",
+	"item.phi.basic_spell_magazine": "Minor Spell Cache",
+	"item.phi.basic_spell_magazine.desc1": "A basic Spell Cache",
+	"item.phi.basic_spell_magazine.desc2": "",
 
-	"item.phi.wide_band_spell_magazine": "Wide Band Spell Magazine",
-	"item.phi.wide_band_spell_magazine.desc": "A cheaper Spell Magazine optimized for high-bandwidth spells",
+	"item.phi.large_spell_magazine": "Medium Spell Cache",
+	"item.phi.large_spell_magazine.desc1": "Increased capacity",
+	"item.phi.large_spell_magazine.desc2": "",
 
-	"item.phi.increased_storage_spell_magazine": "Increased Storage Spell Magazine",
-	"item.phi.increased_storage_spell_magazine.desc": "A Spell Magazine with more capacity allocated to vector data storage",
-	"item.phi.bulk_storage_spell_magazine": "Bulk Storage Spell Magazine",
-	"item.phi.bulk_storage_spell_magazine.desc": "A Spell Magazine optimized for storing large amounts of vector data",
+	"item.phi.huge_spell_magazine": "Major Spell Cache",
+	"item.phi.huge_spell_magazine.desc1": "Extra-large capacity",
+	"item.phi.huge_spell_magazine.desc2": "",
 
-	"item.phi.smart_spell_magazine": "Smart Spell Magazine",
-	"item.phi.smart_spell_magazine.desc": "A Spell Magazine with a smart selection system to assist in loopcasting spells that span more than one bullet\nAutomatically reselects the first slot when loopcast ends",
-	"item.phi.compound_spell_magazine": "Compound Spell Magazine",
-	"item.phi.compound_spell_magazine.desc": "A Spell Magazine designed for simultaneous activation of up to 3 spells",
+	"item.phi.wide_band_spell_magazine": "Broad Spell Cache",
+	"item.phi.wide_band_spell_magazine.desc1": "Optimized for high-bandwidth spells",
+	"item.phi.wide_band_spell_magazine.desc2": "",
+
+	"item.phi.increased_storage_spell_magazine": "Mindful Spell Cache",
+	"item.phi.increased_storage_spell_magazine.desc1": "Increased vector data storage",
+	"item.phi.increased_storage_spell_magazine.desc2": "",
+
+	"item.phi.bulk_storage_spell_magazine": "Eidetic Spell Cache",
+	"item.phi.bulk_storage_spell_magazine.desc1": "Optimized for bulk vector data storage",
+	"item.phi.bulk_storage_spell_magazine.desc2": "",
+
+	"item.phi.smart_spell_magazine": "Looping Spell Cache",
+	"item.phi.smart_spell_magazine.desc1": "Assists loopcasts that use multiple spell nodes",
+	"item.phi.smart_spell_magazine.desc2": "Reselects first slot when loopcast ends",
+
+	"item.phi.compound_spell_magazine": "Compound Spell Cache",
+	"item.phi.compound_spell_magazine.desc1": "Casts up to three spells at once",
+	"item.phi.compound_spell_magazine.desc2": "",
 
 	"item.phi.blood_converter": "Blood Converter",
-	"item.phi.blood_converter.desc": "\u00a7aBlood Converter\u00a77: Improves blood to psi conversion ratio, reducing overflow damage\nIt doesn't look very safe to use"
+	"item.phi.blood_converter.desc1": "It doesn't look very safe to use",
+	"item.phi.blood_converter.desc2": "",
+
+	"item.phi.blood_converters.desc1": "\u00a7aBlood Converters\u00a77:",
+	"item.phi.blood_converters.desc2": "Improves blood to psi conversion ratio",
+	"item.phi.blood_converters.desc3": "Reduces overflow damage",
+
+	"misc.phi.shift_for_info": "\u00a77Hold \u00a7bSHIFT\u00a77 for more info",
+	"misc.phi.ctrl_for_info": "\u00a77Hold \u00a7eCTRL\u00a77 for more info",
+	"misc.phi.alt_for_info": "\u00a77Hold \u00a7aALT\u00a77 for more info"
 }

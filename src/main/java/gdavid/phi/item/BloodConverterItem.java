@@ -2,6 +2,8 @@ package gdavid.phi.item;
 
 import gdavid.phi.Phi;
 import java.util.List;
+
+import gdavid.phi.util.TooltipHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -50,12 +52,28 @@ public class BloodConverterItem extends Item implements ICADComponent {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack item, World world, List<ITextComponent> tooltip, ITooltipFlag advanced) {
-		tooltip.add(new TranslationTextComponent("item." + Phi.modId + "." + id + ".desc"));
-		tooltip.add(new StringTextComponent(" ")
-				.append(new TranslationTextComponent(Phi.modId + ".cadstat.overflow_damage")
-						.mergeStyle(TextFormatting.AQUA))
-				.appendString(": ").append(new TranslationTextComponent("-" + 100 * (1 - damageMultiplier) + "%")
-						.mergeStyle(TextFormatting.GREEN)));
+		TranslationTextComponent desc1 = new TranslationTextComponent("item." + Phi.modId + "." + id + ".desc1");
+		TranslationTextComponent desc2 = new TranslationTextComponent("item." + Phi.modId + "." + id + ".desc2");
+
+		if (desc1.getString().length() > 0)
+			tooltip.add(desc1);
+		if (desc2.getString().length() > 0)
+			tooltip.add(desc2);
+
+		TooltipHelper.tooltipIfAlt(tooltip, () -> {
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".blood_converters.desc1"));
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".blood_converters.desc2"));
+			tooltip.add(new TranslationTextComponent("item." + Phi.modId + ".blood_converters.desc3"));
+		});
+
+		TooltipHelper.tooltipIfShift(tooltip, () -> {
+			tooltip.add(new TranslationTextComponent("psimisc.component_type", new TranslationTextComponent("psi.component.battery")));
+			tooltip.add(new StringTextComponent(" ")
+					.append(new TranslationTextComponent(Phi.modId + ".cadstat.overflow_damage")
+							.mergeStyle(TextFormatting.AQUA))
+					.appendString(": ").append(new TranslationTextComponent("-" + 100 * (1 - damageMultiplier) + "%")
+							.mergeStyle(TextFormatting.GREEN)));
+		});
 	}
 	
 	@SubscribeEvent

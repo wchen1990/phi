@@ -63,16 +63,36 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-repositories {
-	maven { url "http://maven.blamejared.com/" }
+repositories{
+	maven {
+		url "https://www.cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+	maven {
+		name = "CurseForge"
+		url = "https://minecraft.curseforge.com/api/maven/"
+	}
+	maven {
+		name = "Progwml6 maven"
+		url = "https://dvs1.progwml6.com/files/maven/"
+	}
+	maven {
+		name = "Jared"
+		url = "https://maven.blamejared.com/"
+	}
 }
 
 dependencies {
 	minecraft group: 'net.minecraftforge', name: 'forge', version: "1.16.3-34.1.0"
 	annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 
+	compileOnly fg.deobf("mezz.jei:jei-1.16.2:7.1.3.19:api")
+	runtimeOnly fg.deobf("mezz.jei:jei-1.16.2:7.1.3.19")
 	compileOnly fg.deobf("vazkii.psi:Psi:${psi_version}:api")
 	runtimeOnly fg.deobf("vazkii.psi:Psi:${psi_version}")
+	implementation fg.deobf("curse.maven:magipsi-396405:3388248")
 
 	runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 }
