@@ -6,11 +6,11 @@ import gdavid.phi.spell.operator.number.DifferenceOperator;
 import gdavid.phi.spell.operator.number.DivModOperator;
 import gdavid.phi.spell.operator.number.ExtractDigitOperator;
 import gdavid.phi.spell.operator.number.MultiplyAccumulateOperator;
+import gdavid.phi.spell.operator.number.SignumPositiveZeroOperator;
 import gdavid.phi.spell.operator.number.ToDegreesOperator;
 import gdavid.phi.spell.operator.number.ToRadiansOperator;
-import gdavid.phi.spell.operator.vector.CeilVectorOperator;
+import gdavid.phi.spell.operator.vector.ClampVectorOperator;
 import gdavid.phi.spell.operator.vector.ComponentWiseMultiplyVectorOperator;
-import gdavid.phi.spell.operator.vector.FloorVectorOperator;
 import gdavid.phi.spell.operator.vector.NearestAxialVectorOperator;
 import gdavid.phi.spell.operator.vector.RoundVectorOperator;
 import gdavid.phi.spell.operator.vector.SplitVectorOperator;
@@ -22,12 +22,13 @@ import gdavid.phi.spell.other.ClockwiseConnector;
 import gdavid.phi.spell.other.CounterclockwiseConnector;
 import gdavid.phi.spell.other.InOutConnector;
 import gdavid.phi.spell.selector.NearbyMarkersSelector;
-import gdavid.phi.spell.trick.EarlyEvaluateTrick;
 import gdavid.phi.spell.trick.PsionWaveTrick;
 import gdavid.phi.spell.trick.ShadowSequenceTrick;
 import gdavid.phi.spell.trick.ShadowTrick;
 import gdavid.phi.spell.trick.blink.CasterBlinkTrick;
 import gdavid.phi.spell.trick.blink.SwapBlinkTrick;
+import gdavid.phi.spell.trick.evaluation.EarlyEvaluateTrick;
+import gdavid.phi.spell.trick.evaluation.ReevaluateTrick;
 import gdavid.phi.spell.trick.marker.ConjureMarkerTrick;
 import gdavid.phi.spell.trick.marker.MoveMarkerTrick;
 import net.minecraft.item.Item;
@@ -95,6 +96,7 @@ public class ModPieces {
 		register("trick_swap_blink", SwapBlinkTrick.class, "movement", false);
 		
 		register("trick_early_evaluate", EarlyEvaluateTrick.class, Groups.dataFlow, true);
+		register("trick_reevaluate", ReevaluateTrick.class, Groups.dataFlow, true);
 		
 		register("selector_nearby_markers", NearbyMarkersSelector.class, Groups.opticalMagic, false);
 		
@@ -103,6 +105,7 @@ public class ModPieces {
 		register("operator_multiply_accumulate", MultiplyAccumulateOperator.class, Groups.math, false);
 		register("operator_difference", DifferenceOperator.class, Groups.math, false);
 		register("operator_div_mod", DivModOperator.class, Groups.math, false);
+		register("operator_signum_positive_zero", SignumPositiveZeroOperator.class, Groups.math, false);
 		register("operator_extract_digit", ExtractDigitOperator.class, Groups.math, false);
 		// register("operator_replace_digit", ReplaceDigitOperator.class, Groups.math,
 		// false);
@@ -114,9 +117,8 @@ public class ModPieces {
 		register("operator_offset_raycast", OffsetRaycastOperator.class, "block_works", false);
 		register("operator_nearest_axial_vector", NearestAxialVectorOperator.class, Groups.math, false);
 		register("operator_round_vector", RoundVectorOperator.class, Groups.math, false);
-		register("operator_floor_vector", FloorVectorOperator.class, Groups.math, false);
-		register("operator_ceil_vector", CeilVectorOperator.class, Groups.math, false);
 		register("operator_truncate_vector", TruncateVectorOperator.class, Groups.math, false);
+		register("operator_clamp_vector", ClampVectorOperator.class, Groups.math, false);
 		
 		register("operator_branch", BranchOperator.class, Groups.dataFlow, false);
 		
